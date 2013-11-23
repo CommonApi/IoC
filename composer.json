@@ -1,0 +1,17 @@
+{
+    "name": "api/ioc",
+    "description": "Common API for IoC",
+    "keywords": ["api", "CommonApi", "ioc", "Inversion of Control"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AmyStephen",
+            "homepage": "http://Molajo.org/"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Api\\IoC\\": ""
+        }
+    }
+}
