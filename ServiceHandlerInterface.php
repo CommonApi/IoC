@@ -6,7 +6,7 @@
  * @copyright  2013 Common Api. All rights reserved.
  * @license    http://www.opensource.org/licenses/mit-license.html MIT License
  */
-namespace Api\IoC;
+namespace CommonApi\IoC;
 
 /**
  * Service Handler Interface

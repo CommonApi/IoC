@@ -1,17 +1,24 @@
 {
-    "name": "api/ioc",
-    "description": "Common API for IoC",
-    "keywords": ["api", "CommonApi", "ioc", "Inversion of Control"],
+    "name": "commonapi/ioc",
+    "description": "Common IoC Api Interface",
+    "keywords": ["api", "CommonApi", "ioc"],
+    "homepage": "https://github.com/CommonApi/IoC",
+    "type": "api",
     "license": "MIT",
     "authors": [
         {
             "name": "AmyStephen",
-            "homepage": "http://Molajo.org/"
+            "email": "AmyStephen@gmail.com",
+            "homepage": "http://Molajo.org"
         }
     ],
+    "require": {
+        "php": ">=5.3.10",
+        "commonapi/exception": ">=0.1"
+    },
     "autoload": {
         "psr-0": {
-            "Api\\IoC\\": ""
+            "CommonApi\\IoC\\": ""
         }
     }
 }
