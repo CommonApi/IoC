@@ -8,6 +8,8 @@
  */
 namespace CommonApi\IoC;
 
+use CommonApi\Exception\RuntimeException;
+
 /**
  * Service Handler Interface
  *
@@ -71,11 +73,13 @@ interface ServiceHandlerInterface
      */
     public function processFulfilledDependencies(array $dependency_instances = null);
 
+
     /**
-     * IoC Controller triggers the DI Handler to Create the Class for the Service
+     * IoC Controller triggers the DI Handler to create the Class for the Service
      *
      * @return  $this
      * @since   1.0
+     * @throws  \CommonApi\Exception\RuntimeException
      */
     public function instantiateService();
 

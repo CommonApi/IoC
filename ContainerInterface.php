@@ -8,6 +8,8 @@
  */
 namespace CommonApi\IoC;
 
+use CommonApi\Exception\InvalidArgumentException;
+
 /**
  * Inversion of Control Container
  *
@@ -40,6 +42,7 @@ interface ContainerInterface
      */
     public function setService($container_key, $instance, $alias = null);
 
+
     /**
      * Clone the existing service instance and return the cloned instance
      *
@@ -47,6 +50,7 @@ interface ContainerInterface
      *
      * @return  null|object
      * @since   1.0
+     * @throws  \CommonApi\Exception\InvalidArgumentException
      */
     public function cloneService($container_key);
 
