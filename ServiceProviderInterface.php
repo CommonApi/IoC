@@ -45,7 +45,7 @@ interface ServiceProviderInterface
     public function getServiceOptions();
 
     /**
-     * IoC Controller retrieves "store instance indicator" from DI Handler
+     * IoC Controller retrieves "store instance indicator" from Service Provider
      *
      * @return  string
      * @since   0.1
@@ -63,8 +63,8 @@ interface ServiceProviderInterface
     public function setDependencies(array $reflection = array());
 
     /**
-     * IoC Controller shares Dependency Instances with DI Handler for final processing before creating class
-     *     DI Handler adds in any non-class instances parameters
+     * IoC Controller shares Dependency Instances with Service Provider for final processing before creating class
+     *     Service Provider adds in any non-class instances parameters
      *
      * @param   array $dependency_instances
      *
@@ -75,7 +75,7 @@ interface ServiceProviderInterface
 
 
     /**
-     * IoC Controller triggers the DI Handler to create the Class for the Service
+     * IoC Controller triggers the Service Provider to create the Class for the Service
      *
      * @return  $this
      * @since   0.1
@@ -84,7 +84,7 @@ interface ServiceProviderInterface
     public function instantiateService();
 
     /**
-     * IoC Controller triggers the DI Handler to execute logic that follows class instantiation,
+     * IoC Controller triggers the Service Provider to execute logic that follows class instantiation,
      *  This is an ideal place to add Setter Dependencies or any other actions that must follow
      *   creating the Class
      *
@@ -94,7 +94,7 @@ interface ServiceProviderInterface
     public function performAfterInstantiationLogic();
 
     /**
-     * IoC Controller requests Service Instance from DI Handler
+     * IoC Controller requests Service Instance from Service Provider
      *
      * @return  object
      * @since   0.1
@@ -102,7 +102,7 @@ interface ServiceProviderInterface
     public function getServiceInstance();
 
     /**
-     * IoC Controller requests any other Services that the DI Handler wants to save in Container
+     * IoC Controller requests any other Services that the Service Provider wants to save in Container
      *
      * @return  array
      * @since   0.1
@@ -110,7 +110,7 @@ interface ServiceProviderInterface
     public function setService();
 
     /**
-     * IoC Controller requests any Services that the DI Handler wants removed from Container
+     * IoC Controller requests any Services that the Service Provider wants removed from Container
      *
      * @return  array
      * @since   0.1
@@ -118,7 +118,7 @@ interface ServiceProviderInterface
     public function removeService();
 
     /**
-     * IoC Controller requests any Services that the DI Handler wants scheduled now that this Service
+     * IoC Controller requests any Services that the Service Provider wants scheduled now that this Service
      *    has been created
      *
      * @return  array
