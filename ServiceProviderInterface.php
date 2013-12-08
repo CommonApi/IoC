@@ -21,7 +21,8 @@ use CommonApi\Exception\RuntimeException;
 interface ServiceProviderInterface
 {
     /**
-     * Set dependencies either from the reflection object or specifically defined in handler
+     * Service Provider can use this method to define Service Dependencies
+     *  or use the Service Dependencies automatically defined by Reflection processes
      *
      * @param   array $reflection
      *
@@ -31,18 +32,18 @@ interface ServiceProviderInterface
     public function setDependencies(array $reflection = array());
 
     /**
-     * IoC Service Provider Controller shares Dependency Instances with Service Provider for final processing before creating class
-     *     Service Provider adds in any non-class instances parameters
+     * Logic contained within this method is invoked after Dependencies Instances are available
+     *  and before the instantiateService Method is invoked
      *
      * @param   array $dependency_instances
      *
      * @return  $this
      * @since   0.1
      */
-    public function processFulfilledDependencies(array $dependency_instances = null);
+    public function onBeforeInstantiation(array $dependency_instances = null);
 
     /**
-     * IoC Service Provider Controller triggers the Service Provider to create the Class for the Service
+     * Service instantiated automatically or within this method by the Service Provider
      *
      * @return  $this
      * @since   0.1
@@ -51,21 +52,20 @@ interface ServiceProviderInterface
     public function instantiateService();
 
     /**
-     * IoC Service Provider Controller triggers the Service Provider to execute logic that follows class instantiation,
-     *  This is an ideal place to add Setter Dependencies or any other actions that must follow
-     *   creating the Class
+     * Logic contained within this method is invoked after the Service Class construction
+     *  and can be used for setter logic or other post-construction processing
      *
      * @return  $this
      * @since   0.1
      */
-    public function performAfterInstantiationLogic();
+    public function onAfterInstantiation();
 
     /**
-     * IoC Service Provider Controller requests any Services that the Service Provider wants scheduled now that this Service
-     *    has been created
+     * Service Provider can request additional Service Providers be added to the queue
+     *  for processing. Method executed following onAfterInstantiation.
      *
      * @return  array
      * @since   0.1
      */
-    public function scheduleNextService();
+    public function scheduleServices();
 }
