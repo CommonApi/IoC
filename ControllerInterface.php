@@ -9,12 +9,12 @@
 namespace CommonApi\IoC;
 
 /**
- * Inversion of Control Controller - interface to the IoC Container and Dependency Injection Handlers
+ * Inversion of Control Controller - interacts with the IoC Container and Service Providers
  *
  * @package    IoC
  * @license    http://www.opensource.org/licenses/mit-license.html MIT License
  * @copyright  2013 Common Api. All rights reserved.
- * @since      1.0
+ * @since      0.1
  */
 interface ControllerInterface
 {
@@ -25,7 +25,7 @@ interface ControllerInterface
      * @param   string $service_namespace
      *
      * @return  $this
-     * @since   1.0
+     * @since   0.1
      */
     public function setServiceAlias($service_name, $service_namespace);
 
@@ -35,7 +35,7 @@ interface ControllerInterface
      * @param   array $batch_services (array [$service_name] => $options)
      *
      * @return  array (array ['service_name'] => $service_instance)
-     * @since   1.0
+     * @since   0.1
      */
     public function getServices(array $batch_services = array());
 
@@ -46,7 +46,7 @@ interface ControllerInterface
      * @param   array  $options
      *
      * @return  object
-     * @since   1.0
+     * @since   0.1
      */
     public function getService($service_name, array $options = array());
 
@@ -58,7 +58,7 @@ interface ControllerInterface
      * @param   string $service_name
      *
      * @return  $this
-     * @since   1.0
+     * @since   0.1
      */
     public function setService($container_key, $instance, $service_name = null);
 
@@ -68,7 +68,7 @@ interface ControllerInterface
      * @param   string $container_key
      *
      * @return  null|object
-     * @since   1.0
+     * @since   0.1
      */
     public function cloneService($container_key);
 
@@ -78,7 +78,7 @@ interface ControllerInterface
      * @param   string $container_key
      *
      * @return  $this
-     * @since   1.0
+     * @since   0.1
      */
     public function removeService($container_key);
 }

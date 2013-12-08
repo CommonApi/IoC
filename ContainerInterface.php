@@ -16,7 +16,7 @@ use CommonApi\Exception\InvalidArgumentException;
  * @package    IoC
  * @license    http://www.opensource.org/licenses/mit-license.html MIT License
  * @copyright  2013 Common Api. All rights reserved.
- * @since      1.0
+ * @since      0.1
  */
 interface ContainerInterface
 {
@@ -25,8 +25,8 @@ interface ContainerInterface
      *
      * @param   string $container_key
      *
-     * @return  bool|null|object
-     * @since   1.0
+     * @return  mixed|bool|null|object
+     * @since   0.1
      */
     public function getService($container_key);
 
@@ -38,7 +38,7 @@ interface ContainerInterface
      * @param   null|string $alias
      *
      * @return  $this
-     * @since   1.0
+     * @since   0.1
      */
     public function setService($container_key, $instance, $alias = null);
 
@@ -48,8 +48,8 @@ interface ContainerInterface
      *
      * @param   string $container_key
      *
-     * @return  null|object
-     * @since   1.0
+     * @return  mixed|null|object
+     * @since   0.1
      * @throws  \CommonApi\Exception\InvalidArgumentException
      */
     public function cloneService($container_key);
@@ -60,7 +60,7 @@ interface ContainerInterface
      * @param   string $container_key
      *
      * @return  $this
-     * @since   1.0
+     * @since   0.1
      */
     public function removeService($container_key);
 }

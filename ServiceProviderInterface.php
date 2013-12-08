@@ -1,6 +1,6 @@
 <?php
 /**
- * Service Handler Interface
+ * Service Provider Interface
  *
  * @package    IoC
  * @copyright  2013 Common Api. All rights reserved.
@@ -11,20 +11,20 @@ namespace CommonApi\IoC;
 use CommonApi\Exception\RuntimeException;
 
 /**
- * Service Handler Interface
+ * Service Provider Interface
  *
  * @package    IoC
  * @license    http://www.opensource.org/licenses/mit-license.html MIT License
  * @copyright  2013 Common Api. All rights reserved.
- * @since      1.0
+ * @since      0.1
  */
-interface ServiceHandlerInterface
+interface ServiceProviderInterface
 {
     /**
      * Retrieve the name of the Service
      *
      * @return  string
-     * @since   1.0
+     * @since   0.1
      */
     public function getServiceName();
 
@@ -32,7 +32,7 @@ interface ServiceHandlerInterface
      * Retrieve the name of the Handler Namespace
      *
      * @return  string
-     * @since   1.0
+     * @since   0.1
      */
     public function getServiceNamespace();
 
@@ -40,7 +40,7 @@ interface ServiceHandlerInterface
      * Retrieve the Service Options
      *
      * @return  array
-     * @since   1.0
+     * @since   0.1
      */
     public function getServiceOptions();
 
@@ -48,7 +48,7 @@ interface ServiceHandlerInterface
      * IoC Controller retrieves "store instance indicator" from DI Handler
      *
      * @return  string
-     * @since   1.0
+     * @since   0.1
      */
     public function getStoreInstanceIndicator();
 
@@ -58,7 +58,7 @@ interface ServiceHandlerInterface
      * @param   array $reflection
      *
      * @return  boolean|array
-     * @since   1.0
+     * @since   0.1
      */
     public function setDependencies(array $reflection = array());
 
@@ -69,7 +69,7 @@ interface ServiceHandlerInterface
      * @param   array $dependency_instances
      *
      * @return  $this
-     * @since   1.0
+     * @since   0.1
      */
     public function processFulfilledDependencies(array $dependency_instances = null);
 
@@ -78,7 +78,7 @@ interface ServiceHandlerInterface
      * IoC Controller triggers the DI Handler to create the Class for the Service
      *
      * @return  $this
-     * @since   1.0
+     * @since   0.1
      * @throws  \CommonApi\Exception\RuntimeException
      */
     public function instantiateService();
@@ -89,7 +89,7 @@ interface ServiceHandlerInterface
      *   creating the Class
      *
      * @return  $this
-     * @since   1.0
+     * @since   0.1
      */
     public function performAfterInstantiationLogic();
 
@@ -97,7 +97,7 @@ interface ServiceHandlerInterface
      * IoC Controller requests Service Instance from DI Handler
      *
      * @return  object
-     * @since   1.0
+     * @since   0.1
      */
     public function getServiceInstance();
 
@@ -105,7 +105,7 @@ interface ServiceHandlerInterface
      * IoC Controller requests any other Services that the DI Handler wants to save in Container
      *
      * @return  array
-     * @since   1.0
+     * @since   0.1
      */
     public function setService();
 
@@ -113,7 +113,7 @@ interface ServiceHandlerInterface
      * IoC Controller requests any Services that the DI Handler wants removed from Container
      *
      * @return  array
-     * @since   1.0
+     * @since   0.1
      */
     public function removeService();
 
@@ -122,7 +122,7 @@ interface ServiceHandlerInterface
      *    has been created
      *
      * @return  array
-     * @since   1.0
+     * @since   0.1
      */
     public function scheduleNextService();
 }

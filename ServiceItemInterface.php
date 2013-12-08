@@ -14,7 +14,7 @@ namespace CommonApi\IoC;
  * @package    IoC
  * @license    http://www.opensource.org/licenses/mit-license.html MIT License
  * @copyright  2013 Common Api. All rights reserved.
- * @since      1.0
+ * @since      0.1
  */
 interface ServiceItemInterface
 {
@@ -22,7 +22,7 @@ interface ServiceItemInterface
      * IoC Controller requests Service Name from DI Handler
      *
      * @return  string
-     * @since   1.0
+     * @since   0.1
      */
     public function getServiceName();
 
@@ -30,7 +30,7 @@ interface ServiceItemInterface
      * IoC Controller requests Service Namespace from DI Handler
      *
      * @return  string
-     * @since   1.0
+     * @since   0.1
      */
     public function getServiceNamespace();
 
@@ -38,7 +38,7 @@ interface ServiceItemInterface
      * IoC Controller requests Service Options from DI Handler
      *
      * @return  array
-     * @since   1.0
+     * @since   0.1
      */
     public function getServiceOptions();
 
@@ -46,7 +46,7 @@ interface ServiceItemInterface
      * IoC Controller retrieves "store instance indicator" from DI Handler
      *
      * @return  string
-     * @since   1.0
+     * @since   0.1
      */
     public function getStoreInstanceIndicator();
 
@@ -57,7 +57,7 @@ interface ServiceItemInterface
      * @param   array $reflection
      *
      * @return  array
-     * @since   1.0
+     * @since   0.1
      */
     public function setDependencies(array $reflection = null);
 
@@ -67,7 +67,7 @@ interface ServiceItemInterface
      * @param   string $dependency
      *
      * @return  $this
-     * @since   1.0
+     * @since   0.1
      */
     public function removeDependency($dependency);
 
@@ -80,7 +80,7 @@ interface ServiceItemInterface
      * @param   object $dependency_instance
      *
      * @return  $this
-     * @since   1.0
+     * @since   0.1
      */
     public function setDependencyInstance($dependency, $dependency_instance);
 
@@ -88,7 +88,7 @@ interface ServiceItemInterface
      * IoC Controller requests count of Dependencies not yet satisfied
      *
      * @return  int
-     * @since   1.0
+     * @since   0.1
      */
     public function getRemainingDependencyCount();
 
@@ -96,7 +96,7 @@ interface ServiceItemInterface
      * IoC Controller shares Dependency Instances with DI Handler for final processing before creating class
      *
      * @return  $this
-     * @since   1.0
+     * @since   0.1
      */
     public function processFulfilledDependencies();
 
@@ -104,7 +104,7 @@ interface ServiceItemInterface
      * IoC Controller triggers the DI Handler to Create the Class for the Service
      *
      * @return  object
-     * @since   1.0
+     * @since   0.1
      */
     public function instantiateService();
 
@@ -114,7 +114,7 @@ interface ServiceItemInterface
      *   creating the Class
      *
      * @return  object
-     * @since   1.0
+     * @since   0.1
      */
     public function performAfterInstantiationLogic();
 
@@ -122,7 +122,7 @@ interface ServiceItemInterface
      * IoC Controller requests Service Instance from DI Handler
      *
      * @return  object
-     * @since   1.0
+     * @since   0.1
      */
     public function getServiceInstance();
 
@@ -130,7 +130,7 @@ interface ServiceItemInterface
      * IoC Controller requests any other Services that the DI Handler wants to save in Container
      *
      * @return  array
-     * @since   1.0
+     * @since   0.1
      */
     public function setService();
 
@@ -138,7 +138,7 @@ interface ServiceItemInterface
      * IoC Controller requests any Services that the DI Handler wants removed from Container
      *
      * @return  array
-     * @since   1.0
+     * @since   0.1
      */
     public function removeService();
 
@@ -147,7 +147,7 @@ interface ServiceItemInterface
      *    has been created
      *
      * @return  array
-     * @since   1.0
+     * @since   0.1
      */
     public function scheduleNextService();
 }
