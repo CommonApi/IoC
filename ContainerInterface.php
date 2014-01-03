@@ -3,7 +3,7 @@
  * Inversion of Control Container
  *
  * @package    IoC
- * @copyright  2013 Common Api. All rights reserved.
+ * @copyright  2014 Amy Stephen. All rights reserved.
  * @license    http://www.opensource.org/licenses/mit-license.html MIT License
  */
 namespace CommonApi\IoC;
@@ -15,52 +15,62 @@ use CommonApi\Exception\InvalidArgumentException;
  *
  * @package    IoC
  * @license    http://www.opensource.org/licenses/mit-license.html MIT License
- * @copyright  2013 Common Api. All rights reserved.
- * @since      0.1
+ * @copyright  2014 Amy Stephen. All rights reserved.
+ * @since      1.0
  */
 interface ContainerInterface
 {
     /**
-     * Get Instance from Container or return false
+     * Get Contents from Container Entry associated with the key or return false
      *
-     * @param   string $container_key
+     * @param   string $key
      *
-     * @return  mixed|bool|null|object
+     * @return  bool
      * @since   0.1
      */
-    public function getService($container_key);
+    public function exists($key);
 
     /**
-     * Set the existing service instance with the passed in object
+     * Get Contents from Container Entry associated with the key or return false
      *
-     * @param   string      $container_key
-     * @param   object      $instance
-     * @param   null|string $alias
+     * @param   string $key
+     *
+     * @return  mixed
+     * @since   0.1
+     * @throws  \CommonApi\Exception\InvalidArgumentException
+     */
+    public function get($key);
+
+    /**
+     * Set the Container Entry with the associated value
+     *
+     * @param   string $key
+     * @param   mixed  $value
      *
      * @return  $this
      * @since   0.1
      */
-    public function setService($container_key, $instance, $alias = null);
+    public function set($key, $value);
 
+    /**
+     * Remove Container Entry associated with the key or return false
+     *
+     * @param   string $key
+     *
+     * @return  $this
+     * @since   0.1
+     * @throws  \CommonApi\Exception\InvalidArgumentException
+     */
+    public function remove($key);
 
     /**
      * Clone the existing service instance and return the cloned instance
      *
-     * @param   string $container_key
+     * @param   string $key
      *
-     * @return  mixed|null|object
+     * @return  object
      * @since   0.1
      * @throws  \CommonApi\Exception\InvalidArgumentException
      */
-    public function cloneService($container_key);
-
-    /**
-     * Remove the existing service instance
-     *
-     * @param   string $container_key
-     *
-     * @return  $this
-     * @since   0.1
-     */
-    public function removeService($container_key);
+    public function cloneInstance($key);
 }
