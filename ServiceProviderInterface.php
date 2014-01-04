@@ -35,12 +35,12 @@ interface ServiceProviderInterface
      * Logic contained within this method is invoked after Dependencies Instances are available
      *  and before the instantiateService Method is invoked
      *
-     * @param   array $dependency_instances
+     * @param   array $dependency_values
      *
      * @return  $this
      * @since   0.1
      */
-    public function onBeforeInstantiation(array $dependency_instances = null);
+    public function onBeforeInstantiation(array $dependency_values = null);
 
     /**
      * Service instantiated automatically or within this method by the Service Provider
