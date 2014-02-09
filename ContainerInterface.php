@@ -21,16 +21,6 @@ use CommonApi\Exception\InvalidArgumentException;
 interface ContainerInterface
 {
     /**
-     * Process a Set of Service Requests
-     *
-     * @param   array $batch_services (array [$service_name] => $options)
-     *
-     * @return  $this
-     * @since   1.0
-     */
-    public function scheduleServices(array $batch_services = array());
-
-    /**
      * Get a Service, recursively resolving dependencies
      *
      * @param   string $service_name

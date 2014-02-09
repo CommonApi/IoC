@@ -27,7 +27,7 @@ interface ServiceProviderInterface
      * @param   array $reflection
      *
      * @return  boolean|array
-     * @since   0.1
+     * @since   1.0
      */
     public function setDependencies(array $reflection = array());
 
@@ -38,7 +38,7 @@ interface ServiceProviderInterface
      * @param   array $dependency_values
      *
      * @return  $this
-     * @since   0.1
+     * @since   1.0
      */
     public function onBeforeInstantiation(array $dependency_values = null);
 
@@ -46,7 +46,7 @@ interface ServiceProviderInterface
      * Service instantiated automatically or within this method by the Service Provider
      *
      * @return  $this
-     * @since   0.1
+     * @since   1.0
      * @throws  \CommonApi\Exception\RuntimeException
      */
     public function instantiateService();
@@ -56,16 +56,24 @@ interface ServiceProviderInterface
      *  and can be used for setter logic or other post-construction processing
      *
      * @return  $this
-     * @since   0.1
+     * @since   1.0
      */
     public function onAfterInstantiation();
+
+    /**
+     * Service Provider Controller requests any Services (other than the current service) to be saved
+     *
+     * @return  array
+     * @since   1.0
+     */
+    public function setServices();
 
     /**
      * Service Provider can request additional Service Providers be added to the queue
      *  for processing. Method executed following onAfterInstantiation.
      *
      * @return  array
-     * @since   0.1
+     * @since   1.0
      */
     public function scheduleServices();
 }

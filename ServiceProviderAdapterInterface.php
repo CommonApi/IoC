@@ -22,7 +22,7 @@ interface ServiceProviderAdapterInterface
      * Service Provider Controller requests Service Namespace via Adapter from Service Provider
      *
      * @return  string
-     * @since   0.1
+     * @since   1.0
      */
     public function getServiceNamespace();
 
@@ -30,7 +30,7 @@ interface ServiceProviderAdapterInterface
      * Service Provider Controller requests Service Options via Adapter from Service Provider
      *
      * @return  array
-     * @since   0.1
+     * @since   1.0
      */
     public function getServiceOptions();
 
@@ -38,7 +38,7 @@ interface ServiceProviderAdapterInterface
      * Service Provider Controller retrieves "store instance indicator" from Service Provider via the Adapter
      *
      * @return  string
-     * @since   0.1
+     * @since   1.0
      */
     public function getStoreInstanceIndicator();
 
@@ -49,7 +49,7 @@ interface ServiceProviderAdapterInterface
      * @param   array $reflection
      *
      * @return  array
-     * @since   0.1
+     * @since   1.0
      */
     public function setDependencies(array $reflection = null);
 
@@ -59,7 +59,7 @@ interface ServiceProviderAdapterInterface
      * @param   string $dependency
      *
      * @return  $this
-     * @since   0.1
+     * @since   1.0
      */
     public function removeDependency($dependency);
 
@@ -72,7 +72,7 @@ interface ServiceProviderAdapterInterface
      * @param   object $dependency_value
      *
      * @return  $this
-     * @since   0.1
+     * @since   1.0
      */
     public function setDependencyInstance($dependency, $dependency_value);
 
@@ -80,7 +80,7 @@ interface ServiceProviderAdapterInterface
      * Service Provider Controller requests count of Dependencies not yet satisfied
      *
      * @return  int
-     * @since   0.1
+     * @since   1.0
      */
     public function getRemainingDependencyCount();
 
@@ -89,7 +89,7 @@ interface ServiceProviderAdapterInterface
      *  processing before creating class
      *
      * @return  $this
-     * @since   0.1
+     * @since   1.0
      */
     public function onBeforeInstantiation();
 
@@ -97,7 +97,7 @@ interface ServiceProviderAdapterInterface
      * Service Provider Controller triggers the Service Provider to Create the Class for the Service
      *
      * @return  object
-     * @since   0.1
+     * @since   1.0
      */
     public function instantiateService();
 
@@ -107,7 +107,7 @@ interface ServiceProviderAdapterInterface
      *   creating the Class
      *
      * @return  object
-     * @since   0.1
+     * @since   1.0
      */
     public function onAfterInstantiation();
 
@@ -115,32 +115,32 @@ interface ServiceProviderAdapterInterface
      * Service Provider Controller requests Service Instance from Service Provider
      *
      * @return  object
-     * @since   0.1
+     * @since   1.0
      */
     public function getServiceInstance();
-
-    /**
-     * Service Provider Controller requests any other Services that the Service Provider wants to save in Container
-     *
-     * @return  array
-     * @since   0.1
-     */
-    public function setService();
 
     /**
      * Service Provider Controller requests any Services that the Service Provider wants removed from Container
      *
      * @return  array
-     * @since   0.1
+     * @since   1.0
      */
-    public function removeService();
+    public function removeServices();
+
+    /**
+     * Service Provider Controller requests any Services (other than the current service) to be saved
+     *
+     * @return  array
+     * @since   1.0
+     */
+    public function setServices();
 
     /**
      * Service Provider Controller requests any Services that the Service Provider wants scheduled now that this Service
      *    has been created
      *
      * @return  array
-     * @since   0.1
+     * @since   1.0
      */
     public function scheduleServices();
 }
