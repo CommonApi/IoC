@@ -21,18 +21,6 @@ use CommonApi\Exception\InvalidArgumentException;
 interface ContainerInterface
 {
     /**
-     * Get a Service, recursively resolving dependencies
-     *
-     * @param   string $service_name
-     * @param   array  $options
-     *
-     * @return  mixed
-     * @since   1.0
-     * @throws  \CommonApi\Exception\RuntimeException
-     */
-    public function scheduleService($service_name = null, array $options = array());
-
-    /**
      * Determines if the entry identified by the $key exists within the Container
      *
      * @param   string $key
@@ -74,15 +62,4 @@ interface ContainerInterface
      * @throws  \CommonApi\Exception\InvalidArgumentException
      */
     public function remove($key);
-
-    /**
-     * Clone the existing service instance and return the cloned instance
-     *
-     * @param   string $key
-     *
-     * @return  object
-     * @since   1.0
-     * @throws  \CommonApi\Exception\InvalidArgumentException
-     */
-    public function cloneInstance($key);
 }
