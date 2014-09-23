@@ -25,7 +25,7 @@ interface ScheduleInterface
      * @param   array  $options
      *
      * @return  mixed
-     * @since   1.0
+     * @since   1.0.0
      * @throws  \CommonApi\Exception\RuntimeException
      */
     public function scheduleFactoryMethod($product_name, array $options = array());

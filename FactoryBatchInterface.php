@@ -22,7 +22,7 @@ interface FactoryBatchInterface
      * Request for array of Products to be removed from the IoC Container
      *
      * @return  array
-     * @since   1.0
+     * @since   1.0.0
      */
     public function removeContainerEntries();
 
@@ -30,7 +30,7 @@ interface FactoryBatchInterface
      * Request for array of Products and Values to be saved to the IoC Container
      *
      * @return  array
-     * @since   1.0
+     * @since   1.0.0
      */
     public function setContainerEntries();
 
@@ -38,7 +38,7 @@ interface FactoryBatchInterface
      * Request for array of Factory Methods to be Scheduled
      *
      * @return  array
-     * @since   1.0
+     * @since   1.0.0
      */
     public function scheduleFactories();
 }

@@ -27,7 +27,7 @@ interface FactoryInterface
      * @param   array $reflection
      *
      * @return  array
-     * @since   1.0
+     * @since   1.0.0
      */
     public function setDependencies(array $reflection = array());
 
@@ -38,7 +38,7 @@ interface FactoryInterface
      * @param   array $dependency_values
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function onBeforeInstantiation(array $dependency_values = array());
 
@@ -46,7 +46,7 @@ interface FactoryInterface
      * Class instantiated automatically or within this method by the Factory Method
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      * @throws  \CommonApi\Exception\RuntimeException
      */
     public function instantiateClass();
@@ -56,7 +56,7 @@ interface FactoryInterface
      *  Can be used for setter logic or other post-construction processing
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function onAfterInstantiation();
 }

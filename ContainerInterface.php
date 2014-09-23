@@ -26,7 +26,7 @@ interface ContainerInterface
      * @param   string $key
      *
      * @return  bool
-     * @since   1.0
+     * @since   1.0.0
      */
     public function has($key);
 
@@ -36,7 +36,7 @@ interface ContainerInterface
      * @param   string $key
      *
      * @return  mixed
-     * @since   1.0
+     * @since   1.0.0
      * @throws  \CommonApi\Exception\InvalidArgumentException
      */
     public function get($key);
@@ -48,7 +48,7 @@ interface ContainerInterface
      * @param   mixed  $value
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      */
     public function set($key, $value);
 
@@ -58,7 +58,7 @@ interface ContainerInterface
      * @param   string $key
      *
      * @return  $this
-     * @since   1.0
+     * @since   1.0.0
      * @throws  \CommonApi\Exception\InvalidArgumentException
      */
     public function remove($key);
